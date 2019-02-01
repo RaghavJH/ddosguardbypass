@@ -18,12 +18,13 @@ try {
     // When using proxies, avoid using https (see known issues on README)
     ddgbypass = new DdosGuardBypass("http://example.com/", "127.0.0.1", 8080);
     // Bypass...
+    //Only required once. Then you can browse any page on the domain.
     ddgbypass.bypass();
     // Get the cookies for your own use
     System.out.println(ddgbypass.getCookiesAsString());
     // Returns HashMap<String, String> (Every Cookie returned from the website)
     ddgbypass.getCookies();
-    // Use internal get feature to get a page that has been bypassed
+    // Use internal get feature to get a page after bypassing.
     System.out.println(ddgbypass.get("http://example.com/"));
     
 } catch (MalformedURLException e) {
