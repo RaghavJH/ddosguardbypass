@@ -10,29 +10,27 @@ Either download and use the Java class files in your project or import the [.jar
 
 ```java
 try {
+
     // Create bypass object
     DdosGuardBypass ddgbypass = new DdosGuardBypass("https://example.com/");
     // ALTERNATIVELY...
     // You can use proxies with the bypass like so:
     // When using proxies, avoid using https (see known issues on README)
     ddgbypass = new DdosGuardBypass("http://example.com/", "127.0.0.1", 8080);
-
     // Bypass...
     ddgbypass.bypass();
-
-    try {
-        // Get the cookies for your own use
-        System.out.println(ddgbypass.getCookiesAsString());
-        // Returns HashMap<String, String> (Every Cookie returned from the website)
-        ddgbypass.getCookies();
-        // Use internal get feature to get a page that has been bypassed
-        System.out.println(ddgbypass.get("http://example.com/"));
-    } catch (NotYetBypassedException e) {
-        e.printStackTrace();
-    } catch (NotSameHostException e) {
-        e.printStackTrace();
-    }
+    // Get the cookies for your own use
+    System.out.println(ddgbypass.getCookiesAsString());
+    // Returns HashMap<String, String> (Every Cookie returned from the website)
+    ddgbypass.getCookies();
+    // Use internal get feature to get a page that has been bypassed
+    System.out.println(ddgbypass.get("http://example.com/"));
+    
 } catch (MalformedURLException e) {
+    e.printStackTrace();
+} catch (NotYetBypassedException e) {
+    e.printStackTrace();
+} catch (NotSameHostException e) {
     e.printStackTrace();
 }
 ```
@@ -41,16 +39,16 @@ When entering a URL in the constructor, it is essential that you do not use any 
 
 ```java
 try {
+
     DdosGuardBypass ddgbypass = new DdosGuardBypass("https://www.example.com/");
     ddgbypass.bypass();
-    try {
-        System.out.println(ddgbypass.get("https://www.example.com/aPath?query=aString"));
-    } catch (NotYetBypassedException e) {
-        e.printStackTrace();
-    } catch (NotSameHostException e) {
-        e.printStackTrace();
-    }
+    System.out.println(ddgbypass.get("https://www.example.com/aPath?query=aString"));
+    
 } catch (MalformedURLException e) {
+    e.printStackTrace();
+} catch (NotYetBypassedException e) {
+    e.printStackTrace();
+} catch (NotSameHostException e) {
     e.printStackTrace();
 }
 ```
