@@ -25,7 +25,7 @@ try {
     // Returns HashMap<String, String> (Every Cookie returned from the website)
     ddgbypass.getCookies();
     // Use internal get feature to get a page after bypassing.
-    System.out.println(ddgbypass.get("http://example.com/"));
+    System.out.println(ddgbypass.get("https://example.com/"));
     
 } catch (MalformedURLException e) {
     e.printStackTrace();
