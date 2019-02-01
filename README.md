@@ -4,7 +4,7 @@ This is a simple tool that allows scraping of websites protected by ddos-guard.n
 
 ## How To Implement
 
-Either download and use the .java files in your project or import the .jar available.
+Either download and use the .java files in your project or import the [.jar](https://github.com/RaghavJH/ddosguardbypass/blob/master/ddosguardbypass.jar) available.
 
 ### Example
 
